@@ -4,11 +4,11 @@ from typing import List, Dict
 def filter_by_state(transactions: List[Dict], state: str = "EXECUTED") -> List[Dict]:
     """Функция возвращающая новый список словарей"""
 
-    new_transactions = []
-    for first in transactions:
-        if first["state"] == state:
-            new_transactions.append((first))
-    return new_transactions
+    filtered_transactions = []
+    for is_first_operation in transactions:
+        if is_first_operation["state"] == state:
+            filtered_transactions.append((is_first_operation))
+    return filtered_transactions
 
 
 transactions = [
@@ -26,10 +26,10 @@ from datetime import datetime
 def sort_by_date(transactions: List[Dict], descending=True) -> List[Dict]:
     """ "Функция возвращающая новый список, отсортированный по дате"""
 
-    new_transactions = sorted(
+    sorted_transactions = sorted(
         transactions, key=lambda x: datetime.strptime(x["date"], "%Y-%m-%dT%H:%M:%S.%f"), reverse=descending
     )
-    return new_transactions
+    return sorted_transactions
 
 
 print(
