@@ -34,6 +34,6 @@ sorted_operations = sort_by_date(operations)
 print(sorted_operations)
 
 ## Лицензия
-MIT License
+
 ## Контакты
-Электронная почта сопровождающего: gennadij.byte@domain.com
+Электронная почта сопровождающего: gennadij.byte@gmail.com
