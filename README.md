@@ -7,6 +7,8 @@
                 pip install -r requirements.txt
 ## Использование
 
+ссылка на репозиторий с проектом: https://github.com/gennadijbyte-bit/new-my-proect
+
 Пример функции filter_by_state:
 
 
@@ -37,3 +39,6 @@ print(sorted_operations)
 
 ## Контакты
 Электронная почта сопровождающего: gennadij.byte@gmail.com
+
+
+
