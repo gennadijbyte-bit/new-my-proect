@@ -1,21 +1,31 @@
-import masks
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(number_str: str) -> str:
     """Функция, которая обрабатывать информацию о картах,и о счетах."""
 
-    name_number = number_str.split()
-    str_1 = number_str[:-16]
-    long_str = len(name_number[-1])
-    if long_str < 20:
-        number_card = str_1 + masks.get_mask_card_number(number_str[-16:])
-    else:
-        number_card = str_1 + masks.get_mask_account(number_str[-20:])
+    ind = 0
+    number_card = ""
+    for i in range(len(number_str) - 1, 1, -1):
+        if number_str[i] == " ":
+            ind = i
+            break
+    long_str = number_str[ind + 1 :]
+    if (len(long_str) < 16 or len(long_str) > 16) and number_str[:ind] != "Счет":
+        number_card = get_mask_card_number(number_str[ind + 1 :])
+    if (len(long_str) < 20 or len(long_str) > 20) and number_str[:ind] == "Счет":
+        number_card = get_mask_account(number_str[ind + 1 :])
+    if len(long_str) == 16:
+        number_card = number_str[:ind] + " " + get_mask_card_number(number_str[ind + 1 :])
+    if len(long_str) == 20:
+        number_card = number_str[:ind] + " " + get_mask_account(number_str[ind + 1 :])
+    if len(long_str) == 20 and number_str[:ind] != "Счет":
+        number_card = "Введите правильно слово <Счет>"
     return number_card
 
 
-print(mask_account_card("Visa Platinum 7000792289606361"))
-print(mask_account_card("Счет 73654108430135874305"))
+mask_account_card("Visa Platinum 7000792289606368")
+mask_account_card("Счет 73654108430135874305")
 
 
 def get_date(date_str: str) -> str:

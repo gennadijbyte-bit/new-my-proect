@@ -1,4 +1,4 @@
-from typing import List, Dict
+from typing import Dict, List
 
 
 def filter_by_state(transactions: List[Dict], state: str = "EXECUTED") -> List[Dict]:
@@ -23,7 +23,7 @@ print(filter_by_state(transactions, "EXECUTED"))
 from datetime import datetime
 
 
-def sort_by_date(transactions: List[Dict], descending=True) -> List[Dict]:
+def sort_by_date(transactions: List[Dict], descending: bool=True) -> List[Dict]:
     """ "Функция возвращающая новый список, отсортированный по дате"""
 
     sorted_transactions = sorted(
