@@ -21,5 +21,5 @@ def test_mask_account_card(name_number_card: str, mask_name_number_card: str) ->
         ("2024-03-11T02:26:18.671407", "11.03.2024"),
     ],
 )
-def test_get_date(long_date: str, short_date:str) -> None:
+def test_get_date(long_date: str, short_date: str) -> None:
     assert get_date(long_date) == short_date
