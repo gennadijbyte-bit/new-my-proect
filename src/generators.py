@@ -1,3 +1,6 @@
+from typing import Any, Generator, Iterator
+
+
 def filter_by_currency(
     transactions: list[dict[str, Any]], currency_code: str
 ) -> Generator[dict[str, Any], None, None]:

@@ -3,7 +3,7 @@ import pytest
 from src.processing import *
 
 
-def test_filter_by_state(valid_information: list[Dict], valid_information_result: list[Dict] ) -> None:
+def test_filter_by_state(valid_information: list[Dict], valid_information_result: list[Dict]) -> None:
     assert filter_by_state(valid_information) == valid_information_result
 
 
