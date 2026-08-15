@@ -1,6 +1,3 @@
-from src.masks import *
-
-
 def get_mask_card_number(number1: str) -> str:
     """Функция маскировки номера банковской карты."""
 

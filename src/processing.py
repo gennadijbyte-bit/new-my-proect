@@ -1,6 +1,10 @@
+from datetime import datetime
 from typing import Dict, List
 
+from src.decorators import log
 
+
+@log("")
 def filter_by_state(transactions: List[Dict], state: str = "EXECUTED") -> List[Dict]:
     """Функция возвращающая новый список словарей"""
 
@@ -20,9 +24,7 @@ transactions = [
 print(filter_by_state(transactions, "EXECUTED"))
 
 
-from datetime import datetime
-
-
+@log("")
 def sort_by_date(transactions: List[Dict], descending: bool = True) -> List[Dict]:
     """ "Функция возвращающая новый список, отсортированный по дате"""
 
